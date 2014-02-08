@@ -25,7 +25,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="3"/>
-      <BuildNr Value="27"/>
+      <BuildNr Value="29"/>
       <StringTable CompanyName="Bernd Kreuss" FileDescription="Interface library for using R with MQL4" LegalCopyright="Bernd Kreuss" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -43,16 +43,15 @@
         <LaunchingApplication PathPlusParams="\usr\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
-    <Units Count="3">
+    <Units Count="4">
       <Unit0>
         <Filename Value="mt4r.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="mt4r"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <TopLine Value="24"/>
+        <CursorPos X="10" Y="29"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <WindowIndex Value="1"/>
@@ -68,15 +67,15 @@
         <UnitName Value="profs_TRConsole"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="717"/>
-        <CursorPos X="35" Y="751"/>
+        <TopLine Value="492"/>
+        <CursorPos X="26" Y="505"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <WindowIndex Value="1"/>
           <TopLine Value="1"/>
           <CursorPos X="22" Y="1"/>
         </ExtraEditor1>
-        <UsageCount Value="84"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -86,12 +85,24 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="36" Y="3"/>
-        <UsageCount Value="84"/>
+        <UsageCount Value="87"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="stringutil.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="stringutil"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="79" Y="12"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit3>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
-    <Version Value="9"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
       <Filename Value="mt4R.dll"/>
@@ -100,11 +111,6 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
-    <Parsing>
-      <SyntaxOptions>
-        <UseAnsiStrings Value="False"/>
-      </SyntaxOptions>
-    </Parsing>
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>
       <SmallerCode Value="True"/>
@@ -116,6 +122,7 @@
     </CodeGeneration>
     <Linking>
       <Debugging>
+        <GenerateDebugInfo Value="False"/>
         <UseLineInfoUnit Value="False"/>
         <StripSymbols Value="True"/>
       </Debugging>

@@ -36,7 +36,8 @@ type
 
   TMqlStr = packed record
     Size: LongInt;
-    Ptr:  PChar;
+    Ptr:  PWideChar;
+    Dummy: LongInt;
   end;
 
   // this is string foo[] in mql4.
@@ -168,7 +169,8 @@ uses
   {$ifdef win32}Windows,{$endif}
   SysUtils,
   strutils,
-  Math;
+  Math,
+  stringutil;
 
 resourcestring
   rsCouldNotFormatDebugMessage = 'could not format debug message';
@@ -500,7 +502,7 @@ begin
   Code := AVariable + ' <- c(';
   for i := 0 to ASize - 1 do
   begin
-    Code := Code + '"' + AVector^[i].Ptr + '", ';
+    Code := Code + '"' + WideStringToString(AVector^[i].Ptr, CP_ACP) + '", ';
     if length(Code) > 3000 then
     begin // it does not like too long lines
       Code := LeftStr(Code, Length(Code) - 2) + ')'; // remove last ', '
