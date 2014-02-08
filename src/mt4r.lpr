@@ -212,19 +212,19 @@ begin
 end;
 
 // evaluate expression and return boolean
-function RGetBool(AHandle: LongInt; AExpression: PChar): Longbool; stdcall;
+function RGetBool(AHandle: LongInt; AExpression: PWideChar): Longbool; stdcall;
 begin
   if isValid(AHandle) then
-    Result := TRConsole(AHandle).GetBoolean(AExpression)
+    Result := TRConsole(AHandle).GetBoolean(WideStringToString(AExpression, CP_ACP))
   else
     Result := False;
 end;
 
 // evaluate expression and return integer
-function RGetInteger(AHandle: LongInt; AExpression: PChar): LongInt; stdcall;
+function RGetInteger(AHandle: LongInt; AExpression: PWideChar): LongInt; stdcall;
 begin
   if isValid(AHandle) then
-    Result := TRConsole(AHandle).GetInteger(AExpression)
+    Result := TRConsole(AHandle).GetInteger(WideStringToString(AExpression, CP_ACP))
   else
     Result := 0;
 end;

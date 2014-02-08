@@ -25,7 +25,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="4"/>
-      <BuildNr Value="5"/>
+      <BuildNr Value="6"/>
       <StringTable CompanyName="Bernd Kreuss" FileDescription="Interface library for using R with MQL4" LegalCopyright="Bernd Kreuss" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
