@@ -36,7 +36,8 @@ type
 
   TMqlStr = packed record
     Size: LongInt;
-    Ptr:  PChar;
+    Ptr:  PWideChar;
+    Dummy: LongInt;
   end;
 
   // this is string foo[] in mql4.
@@ -59,6 +60,8 @@ type
     procedure WaitNotBusy;
     procedure SetNotBusy;
   public
+    function WideStringToString(const ws: WideString; codePage: Word): AnsiString;
+
     // start an instance of R (c:\full\path\to\Rterm.exe --no-save)
     constructor Create(ACommandLine: Ansistring; ADebugLevel: LongInt); reintroduce;
 
@@ -258,6 +261,31 @@ begin
   DeleteCriticalSection(FBusyWaitCrtSect);
   Msg(-1, 'TRConsole', 'destroying');
   inherited Destroy;
+end;
+
+{:Converts Unicode string to Ansi string using specified code page.
+  @param   ws       Unicode string.
+  @param   codePage Code page to be used in conversion.
+  @returns Converted ansi string.
+}
+
+function TRConsole.WideStringToString(const ws: WideString; codePage: Word): AnsiString;
+var
+  l: integer;
+begin
+  if ws = '' then
+    Result := ''
+  else
+  begin
+    l := WideCharToMultiByte(codePage,
+      WC_COMPOSITECHECK or WC_DISCARDNS or WC_SEPCHARS or WC_DEFAULTCHAR,
+      @ws[1], - 1, nil, 0, nil, nil);
+    SetLength(Result, l - 1);
+    if l > 1 then
+      WideCharToMultiByte(codePage,
+        WC_COMPOSITECHECK or WC_DISCARDNS or WC_SEPCHARS or WC_DEFAULTCHAR,
+        @ws[1], - 1, @Result[1], l - 1, nil, nil);
+  end;
 end;
 
 procedure TRConsole.WaitNotBusy;
@@ -500,7 +528,7 @@ begin
   Code := AVariable + ' <- c(';
   for i := 0 to ASize - 1 do
   begin
-    Code := Code + '"' + AVector^[i].Ptr + '", ';
+    Code := Code + '"' + WideStringToString(AVector^[i].Ptr, CP_ACP) + '", ';
     if length(Code) > 3000 then
     begin // it does not like too long lines
       Code := LeftStr(Code, Length(Code) - 2) + ')'; // remove last ', '
