@@ -24,8 +24,8 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <MinorVersionNr Value="3"/>
-      <BuildNr Value="29"/>
+      <MinorVersionNr Value="4"/>
+      <BuildNr Value="5"/>
       <StringTable CompanyName="Bernd Kreuss" FileDescription="Interface library for using R with MQL4" LegalCopyright="Bernd Kreuss" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -48,10 +48,11 @@
         <Filename Value="mt4r.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="mt4r"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="24"/>
-        <CursorPos X="10" Y="29"/>
+        <TopLine Value="49"/>
+        <CursorPos X="27" Y="72"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <WindowIndex Value="1"/>
@@ -91,12 +92,11 @@
         <Filename Value="stringutil.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="stringutil"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="79" Y="12"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit3>
     </Units>
@@ -105,7 +105,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="mt4R.dll"/>
+      <Filename Value="mt4R"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
