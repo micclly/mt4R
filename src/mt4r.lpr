@@ -168,10 +168,10 @@ begin
 end;
 
 // assign string to variable given by name
-procedure RAssignString(AHandle: LongInt; AVariable: PWideChar; AValue: PChar); stdcall;
+procedure RAssignString(AHandle: LongInt; AVariable: PWideChar; AValue: PWideChar); stdcall;
 begin
   if isValid(AHandle) then
-    TRConsole(AHandle).AssignString(WideStringToString(AVariable, CP_ACP), AValue);
+    TRConsole(AHandle).AssignString(WideStringToString(AVariable, CP_ACP), WideStringToString(AValue, CP_ACP));
 end;
 
 // assign vector to variable given by name
