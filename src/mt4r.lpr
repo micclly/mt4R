@@ -29,7 +29,8 @@ uses
   Windows,
   SysUtils,
   profs_win32exceptiontrap,
-  profs_TRConsole;
+  profs_TRConsole,
+  stringutil;
 
 {internal helper functions}
 
@@ -60,31 +61,6 @@ begin
     Log('Invalid (not existing) handle for TRConsole object: %d', [AHandle]);
     Dummy  := Dummy; // suppress the compiler hint about unused variable
     Result := False;
-  end;
-end;
-
-{:Converts Unicode string to Ansi string using specified code page.
-  @param   ws       Unicode string.
-  @param   codePage Code page to be used in conversion.
-  @returns Converted ansi string.
-}
-
-function WideStringToString(const ws: WideString; codePage: Word): AnsiString;
-var
-  l: integer;
-begin
-  if ws = '' then
-    Result := ''
-  else
-  begin
-    l := WideCharToMultiByte(codePage,
-      WC_COMPOSITECHECK or WC_DISCARDNS or WC_SEPCHARS or WC_DEFAULTCHAR,
-      @ws[1], - 1, nil, 0, nil, nil);
-    SetLength(Result, l - 1);
-    if l > 1 then
-      WideCharToMultiByte(codePage,
-        WC_COMPOSITECHECK or WC_DISCARDNS or WC_SEPCHARS or WC_DEFAULTCHAR,
-        @ws[1], - 1, @Result[1], l - 1, nil, nil);
   end;
 end;
 
