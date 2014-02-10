@@ -8,7 +8,7 @@ Added sample experts, modified to adapt to new MQL4.
 
 ### Release date
 
-Feburary 9, 2014
+Feburary 10, 2014
 
 ### New
 
