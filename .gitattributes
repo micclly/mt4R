@@ -1,2 +1,3 @@
-*.mq4 text=auto diff=mq4
-*.mqh text=auto diff=mq4
+[attr]utf16 diff merge
+*.mq4 utf16 diff=mq4
+*.mqh utf16 diff=mq4
