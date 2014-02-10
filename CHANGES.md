@@ -1,6 +1,20 @@
 CHANGES
 ==========
 
+v1.4.0-SNAPSHOT-b7
+--------------------
+
+Added sample experts, modified to adapt to new MQL4.
+
+### Release date
+
+Feburary 9, 2014
+
+### New
+
+* Added sample experts, modified to adapt to new MQL4.
+  These are originally distributed [here](https://sites.google.com/site/prof7bit/r-for-metatrader-4/trend-o-mat-arb-o-mat).
+
 v1.4.0-SNAPSHOT-b6
 --------------------
 
@@ -8,7 +22,7 @@ Bug fix release
 
 ### Released date
 
-Feburary 9, 2014: v1.4.0-b5
+Feburary 9, 2014
 
 ### Fixed
 
